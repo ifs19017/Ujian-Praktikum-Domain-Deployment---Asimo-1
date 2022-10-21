@@ -3,7 +3,6 @@
 <head>
 	<!-- Judul Halaman -->
 	<title>Orbit Future Academy</title>
-	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
@@ -47,21 +46,20 @@
 	<div id="informasi" class="container-fluid">
 		<br>
 		<br>
-		<br>
 		<div class="row">
 			<div class="col-sm-6">
 				<!-- Deskripsi Aplikasi -->
-				<h2>ICA</h2>
-				<h4>Iris ClAssifier</h4><br>
+				<h2>SAT-PAM</h2>
+				<h4>Sms Aman Tanpa sPAM</h4><br>
 				<p style="text-align: justify;text-justify: inter-word;">
-					Aplikasi ini dibuat untuk menentukan spesies dari bunga iris berdasarkan pengukuran panjang serta lebar 
-					dari <i>sepal</i> dan <i>petal</i> bunga. "Iris Setosa", "Iris Versicolor", dan "Iris Virginica" 
-					adalah ketiga species bunga iris yang dapat diprediksi melalui aplikasi ini.
-					Pengguna hanya cukup memberikan 4 nilai pengukuran untuk dapat mengetahui spesies dari bunga iris tersebut.
-					Keempat nilai pengukuran tersebut adalah panjang <i>petal</i>, lebar <i>petal</i>, panjang <i>sepal</i>,
-					dan lebar <i>sepal</i>.
+					Aplikasi ini dibuat khusus untuk mendeteksi sms spam seperti penipuan atau <i>fraud</i> 
+					yang banyak meresahkan masyarakat. SMS yang masuk ke perangkat pengguna akan terlebih 
+					dahulu diklasifikasi apakah pesan tersebut adalah pesan wajar, pesan promo, ataupun pesan penipuan.
+					Jika ditemukan pesan singkat yang berisi penipuan, aplikasi ini akan memberi tahu pengguna untuk 
+					berhati-hati terhadap pesan tersebut. Dengan SAT-PAM, pengguna dapat merasa aman karena terhindar
+					dari sms yang berisi pesan penipuan. 
 				</p>
-				<br>
+			    <br>
 
 				<!-- Tombol Mulai -->
 				<nav id="navgo" class="navbar" style="background-color:#ffffff;z-index: 0;">
@@ -71,8 +69,8 @@
 						</li>
 					</ul>
 				</nav>
+
 			</div>
-			
 			<div class="col-sm-6">
 				<br>
 				<br>
@@ -80,98 +78,110 @@
 				<img src={{ url_for('static', filename='/images/app-display.JPG') }} width="500" ></img>
 			</div>
 		</div>
-		<br>
 	</div>
-	
 
 	<!-- Bagian Halaman (Aplikasi) -->
 	<div id="aplikasi" data-bs-spy="scroll" data-bs-target="#navgo" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-		<br>
-		<br>
+		<br><br>
 		<div class="row">
 			<div class="col-sm-6">
-				</br>
-				<!-- Input Nilai Pengukuran dari Pengguna -->
-				<h3 style="margin-left: 50px;">Nilai Pengukuran </h3>
-				<form>
-					<div class="form-group" style="margin-left: 50px;">
-						<!-- Input Slider untuk Nilai Pengukuran Bunga Iris -->
-						<label for="range_sepal_length">Sepal Length (cm) </label>&nbsp;&rarr;&nbsp;
-						<span id="rangeVal_sepal_length">5.0<!-- Default value --></span>
-						<input type="range" min="4.3" max="7.9" step="0.05" value="5.0" class="slider" id="range_sepal_length" 
-						onInput="$('#rangeVal_sepal_length').html($(this).val())">
-						</br>
-						<label for="range_sepal_width">Sepal Width (cm) </label>&nbsp;&rarr;&nbsp;
-						<span id="rangeVal_sepal_width">3.0<!-- Default value --></span>
-						<input type="range" min="2.0" max="4.4" step="0.05" value="3.0" class="slider" id="range_sepal_width" 
-						onInput="$('#rangeVal_sepal_width').html($(this).val())">
-						</br>
-						<label for="range_petal_length">Petal Length (cm) </label>&nbsp;&rarr;&nbsp;
-						<span id="rangeVal_petal_length">3.0<!-- Default value --></span>
-						<input type="range" min="1.0" max="6.9" step="0.05" value="3.5" class="slider" id="range_petal_length" 
-						onInput="$('#rangeVal_petal_length').html($(this).val())">
-						</br>
-						<label for="range_petal_width">Petal Width (cm) </label>&nbsp;&rarr;&nbsp;
-						<span id="rangeVal_petal_width">3.0<!-- Default value --></span>
-						<input type="range" min="0.1" max="2.5" step="0.05" value="1.0" class="slider" id="range_petal_width" 
-						onInput="$('#rangeVal_petal_width').html($(this).val())">
-						</br>
-						<!-- Tombol Prediksi -->
-						<button type="submit" id="prediksi_submit" class="btn btn-default btn-lg">Prediksi</button>
+				<!-- HP 1 (Oknum) -->
+				<div class="phone_bg1">
+
+					<br>
+					<br>
+					  
+					<div class="chat-box1">
+						<!-- Header 1 (Oknum) -->
+						<div class="chat-box-header1">Oknum</div>
+						
+						<div class="chat-box-body1">
+							<div class="chat-box-overlay1"></div>
+							<div class="chat-logs1">
+								<!-- Chat Log 1 (Oknum) -->
+							</div>
+						</div>
+						
+						<div class="chat-input1">      
+							<form>
+								<!-- Input Chat 1 (Oknum) -->
+								<input type="text" id="chat-input1" placeholder="Kirim pesan singkat ..."/>
+								
+								<!-- Tombol Send 1 (Oknum) -->
+								<button type="submit" class="chat-submit1" id="chat-submit1"><i class="material-icons">send</i></button>
+							</form>      
+						</div>
 					</div>
-				</form>
+				</div>
 			</div>
+			
 			<div class="col-sm-6">
-				<br>
-				<!-- Bagian Halaman untuk Hasil Prediksi -->
-				<div id="hasil_prediksi" align="center">
-						<!-- Hasil Prediksi akan ditampilkan di sini-->
+				<!-- HP 2 (Anda) -->
+				<div class="phone_bg2">
+
+					<br>
+					<br>
+					  
+					<div class="chat-box2">
+						<!-- Header 2 (Anda) -->
+						<div class="chat-box-header2">Anda</div>
+						
+						<div class="chat-box-body2">
+							<div class="chat-box-overlay2"></div>
+							<div class="chat-logs2">
+								<!-- Chat Log 2 (Anda) -->
+							</div>
+						</div>
+						
+						<div class="chat-input2">      
+							<form>
+								<!-- Input Chat 2 (Anda) -->
+								<input type="text" id="chat-input2" placeholder="Kirim pesan singkat ..."/>
+								
+								<!-- Tombol Send 2 (Anda) -->
+								<button type="submit" class="chat-submit2" id="chat-submit2"><i class="material-icons">send</i></button>
+							</form>      
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<br>
-		<br>
 	</div>
 
 	<!-- Bagian Halaman (Anggota Kelompok) -->
 	<div id="anggotaKelompok" class="container-fluid text-center">
 		<br>
 		<h2>ANGGOTA KELOMPOK</h2>
-		<h4>Kelompok 1 Asimo</h4>
+		<h4>Tim Deployment dan Tim NLP</h4>
 		<br>
 		<div class="row slideanim">
 			<div class="col-sm-4">
-				<!-- <span class="glyphicon glyphicon-user logo-small"></span> -->
-				<img src="static/images/montana.jpg" height="150" width="150" alt="" />
-				<h4>MONTANA GURNING</h4>
-				<p>INFORMATIKA - INSTITUT TEKNOLOGI DEL</p>
+				<span class="glyphicon glyphicon-user logo-small"></span>
+				<h4>BUDI</h4>
+				<p>Universitas Sumatera</p>
 			</div>
 			<div class="col-sm-4">
-				<!-- <span class="glyphicon glyphicon-user logo-small"></span> -->
-				<img src="static/images/alex.jpg" height="150" width="150" alt="" />
-				<h4>ALEX MUHAMAD KASIBA</h4>
-				<p>SISTEM INFORMASI - UNIVERSITAS DHARMA ANDALAS</p>
+				<span class="glyphicon glyphicon-user logo-small"></span>
+				<h4>AYU</h4>
+				<p>Universitas Jawa dan Bali</p>
 			</div>
 			<div class="col-sm-4">
-				<!-- <span class="glyphicon glyphicon-user logo-small"></span> -->
-				<img src="static/images/putri.jpeg" height="150" width="150" alt="" />
-				<h4>PUTRI EKARANI</h4>
-				<p>FISIKA - UNIVERSITAS PENDIDIKAN INDONESIA</p>
+				<span class="glyphicon glyphicon-user logo-small"></span>
+				<h4>TONO</h4>
+				<p>Universitas Kalimantan</p>
 			</div>
 		</div>
 	    <br>
 	    <div class="row slideanim">
 			<div class="col-sm-6">
-				<!-- <span class="glyphicon glyphicon-user logo-small"></span> -->
-				<img src="static/images/faridz.jpeg" height="150" width="150" alt="" />
-				<h4>MUHAMMAD FARIDZ AL HAYAT</h4>
-				<p>TEKNIK GEOFISIKA - UNIVERSITAS LAMPUNG</p>
+				<span class="glyphicon glyphicon-user logo-small"></span>
+				<h4>PUTRA</h4>
+				<p>Universitas Sulawesi</p>
 			</div>
 			<div class="col-sm-6">
-				<!-- <span class="glyphicon glyphicon-user logo-small"></span> -->
-				<img src="static/images/rein.jpeg" height="150" width="150" alt="" />
-				<h4>REIN AISYAH</h4>
-				<p>TEKNIK ELEKTRONIKA - POLITEKNIK NEGERI SRIWIJAYA</p>
+				<span class="glyphicon glyphicon-user logo-small"></span>
+				<h4>PUTRI</h4>
+				<p>Universitas Kepulauan Nusa, Maluku dan Papua</p>
 			</div>
 	    </div>
 	</div>
